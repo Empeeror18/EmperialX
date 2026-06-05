@@ -154,7 +154,7 @@ Every application respects your color scheme:
 1. **Clone the repository**:
 
    ```bash
-   git clone --branch waybar https://github.com/Empeeror18/EmperialX
+   git clone https://github.com/Empeeror18/EmperialX.git
    cd EmperialX
    ```
 
