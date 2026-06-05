@@ -93,18 +93,11 @@ Clone the EmperialX dotfiles:
 
 ```bash
 # Clone from the waybar branch
-git clone --branch waybar https://github.com/Empeeror18/EmperialX
+git clone https://github.com/Empeeror18/EmperialX.git
 cd EmperialX
 
 # Verify you're on the correct branch
 git branch -v
-```
-
-The `waybar` branch contains the most recent, polished configuration. If you want to explore other branches:
-
-```bash
-git branch -a      # List all branches
-git checkout <branch-name>  # Switch to a different branch
 ```
 
 ---
