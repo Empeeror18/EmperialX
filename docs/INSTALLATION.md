@@ -93,8 +93,8 @@ Clone the EmperialX dotfiles:
 
 ```bash
 # Clone from the waybar branch
-git clone --branch waybar https://github.com/Empeeror18/Arch-dotfiles.git
-cd Arch-dotfiles
+git clone --branch waybar https://github.com/Empeeror18/EmperialX
+cd EmperialX
 
 # Verify you're on the correct branch
 git branch -v
@@ -285,10 +285,10 @@ cp -r .config/fontconfig ~/.config/
 
 ### Option 3: Manual Selection
 
-Navigate to the `Arch-dotfiles` directory and manually select files:
+Navigate to the `EmperialX` directory and manually select files:
 
 ```bash
-cd Arch-dotfiles
+cd EmperialX
 ls -la .config/
 
 # Copy individual directories as needed
@@ -586,7 +586,7 @@ echo "Colors saved to ~/.cache/wal/"
    cp ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bak
 
    # Copy fresh config from dotfiles
-   cp Arch-dotfiles/.config/kitty/kitty.conf ~/.config/kitty/
+   cp EmperialX/.config/kitty/kitty.conf ~/.config/kitty/
    ```
 
 ### Neovim LSP Not Working

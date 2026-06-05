@@ -154,8 +154,8 @@ Every application respects your color scheme:
 1. **Clone the repository**:
 
    ```bash
-   git clone --branch waybar https://github.com/Empeeror18/Arch-dotfiles.git
-   cd Arch-dotfiles
+   git clone --branch waybar https://github.com/Empeeror18/EmperialX
+   cd EmperialX
    ```
 
 2. **Review installation guide**:
