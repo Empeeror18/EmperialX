@@ -1,0 +1,101 @@
+{
+	"position": "top",
+	"nargin-top": 15,
+	"modules-left": ["clock" ],
+	"modules-center": ["tray","hyprland/workspaces"],
+	"modules-right": [
+		"pulseaudio",
+		"network",
+		"battery",
+		"custom/notification"
+	],
+	"clock": {
+		"interval": 60,
+		"format": "{:%H:%M}",
+		"max-length": 25
+	},
+	"hyprland/workspaces": {
+		"format": "{name} ",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"active": "",
+			"default": ""
+		}
+	},
+		"persistent-workspaces": {
+			"*": 5, // 5 workspaces by default on every monitor
+			"HDMI-A-1": 3 // but only three on HDMI-A-1
+		},
+		"tray": {
+			"icon-size": 21,
+			"spacing": 10
+		},
+
+
+		"pulseaudio": {
+			"format": "{volume}% {icon}",
+			"format-bluetooth": "{volume}% {icon}",
+			"format-muted": "",
+			"format-icons": {
+				"headphone": "",
+				"hands-free": "",
+				"headset": "",
+				"phone": "",
+				"phone-muted": "",
+				"portable": "",
+				"car": "",
+				"default": ["", ""]
+			},
+			"scroll-step": 1,
+			"on-click": "pavucontrol",
+			"ignored-sinks": ["Easy Effects Sink"]
+		},
+		"network": {
+			"interface": "wlp2s0",
+			"format": "{ifname}",
+			"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+			"format-disconnected": "", //An empty format will hide the module.
+			"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+			"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+			"tooltip-format-ethernet": "{ifname} ",
+			"tooltip-format-disconnected": "Disconnected",
+			"max-length": 50
+		},
+		"battery": {
+			"interval": 60,
+			"states": {
+				"warning": 30,
+				"critical": 15
+			},
+			"format": "{capacity}% {icon}",
+			"format-icons": ["", "", "", "", ""],
+			"max-length": 25
+		},
+		  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}
+
+
+

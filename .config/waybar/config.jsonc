@@ -2,88 +2,44 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-top": 13,
-  "modules-left": ["clock", "custom/media"],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio", "battery", "network"],
+  "height": 10,
+  "margin-top": 7,
+  "spacing": 5,  
   "on-click": "~/.config/hypr/scripts/volume-popup.sh",
+  "include": [
+    "./modules/clock.jsonc",
+    "./modules/distro.jsonc",
+    "./modules/network.jsonc",
+    "./modules/power-profile.jsonc",
+    "./modules/audio.jsonc",
+    "./modules/workspace.jsonc",
+    "./modules/idle_inhibitor.jsonc",
+    "./modules/groups.jsonc",
+    "./modules/swaync.jsonc",
+    "./modules/battery.jsonc"
 
- 
+  ],
 
-  "custom/pacman": {
-    "format": " {}   ",
-    "interval": "once",
-    "exec": "checkupdates | wc -l",
-    "on-click": "update-system",
-    "signal": 8
-  },
+  "modules-left": [
+    "group/distro-group",
+    "clock"
+  ],
 
-  "custom/media": {
-  "format": "{text}",
-  "return-type": "json",
-  "escape": true,
-  "max-length": 15,
-  "on-click": "playerctl play-pause",
-  "on-click-right": "playerctl stop",
-  "on-scroll-up": "playerctl next",
-  "on-scroll-down": "playerctl previous",
-  "exec": "$HOME/.config/waybar/scripts/mediaplayer.py"
-},
+  "modules-center": [
+    "hyprland/workspaces",
+    "idle_inhibitor"
+  ],
 
-  "battery": {
-    "format": "{icon}  {capacity}%",
-    "format-charging": "󰂄  {capacity}%",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-  },
-
-  "clock": {
-  "format": "  󰥔   {:%I:%M %p}",
-  "format-alt": "  󰥔   {:%a, %d. %b  %I:%M %p}"
-},
-
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "󰂱  {volume}%",
-    "format-muted": "󰖁",
-    "scroll-step": 1,
-    "on-click": "pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"],
-    "format-icons": {
-      "headphone": "  ",
-      "hands-free": " ",
-      "headset": "󰋎 ",
-      "phone": " ",
-      "portable": " ",
-      "car": "",
-      "default": ["󰖀", "󰕾"]
-    }
-  },
-
-  "network": {
-    "format": "{ifname}",
-    "format-wifi": "{icon}   {essid}",
-    "format-ethernet": "󰈀  Connected",
-    "format-disconnected": "󰤭   disconnected",
-    "max-length": 50,
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-  },
-
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "persistent-workspaces": {
-        "*": 5 
-    },
-    "format-icons": {
-      	    "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-	"urgent": "󰀨",
-      "default": ""
-    },
-
-    "sort-by-number": true
+  "modules-right": [
+    "group/audio", 
+    "power-profile", 
+    "group/network",
+    "battery",
+    "custom/swaync"
+  ]
   }
-}
+
+
+
+
+

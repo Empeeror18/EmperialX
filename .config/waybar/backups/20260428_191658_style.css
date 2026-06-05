@@ -1,0 +1,104 @@
+@import url("colors/one-dark.css");
+* {
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+}
+* {
+	border: none;
+	border-radius: 0px;
+	
+	font-weight: bold;
+
+	min-height: 0;
+	padding: 0;
+	margin: 0;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+tooltip {
+	background: @bg0;
+	border: 1px solid @bg3;
+	border-radius: 12px;
+}
+
+tooltip label {
+	color: @fg;
+	padding: 6px;
+}
+
+/* WORKSPACES (FIXED) */
+#workspaces {
+	background-color: @bg0;
+	padding: 5px 3px;
+	margin: 0 0 0 12px;
+	border-radius: 18px;
+	border: 1px solid @bg1;
+	color: @fg;
+}
+
+#workspaces button {
+	padding: 0px 6px;
+	margin: 0px 3px;
+	border-radius: 50px;
+	color: @fg;
+	transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+	background-color: @blue;
+	color: @bg0;
+	min-width: 50px;
+	font-size: 13px;
+}
+
+#workspaces button:hover {
+	background-color: @purple;
+	color: @bg0;
+	border-radius: 16px;
+	min-width: 50px;
+}
+
+#workspaces button.urgent {
+	background-color: @red;
+	color: @bg0;
+	border-radius: 16px;
+	min-width: 50px;
+}
+
+/* RIGHT MODULES */
+#battery,
+#pulseaudio,
+#network,
+#clock,
+#custom-notification {
+	font-family: "Symbols Nerd Font Mono";
+
+	background-color: @bg0;
+	padding: 0 15px;
+	margin: 0 0 0 12px;
+	border-radius: 50px;
+	border: 1px solid @bg1;
+}
+
+#clock {
+	color: @blue;
+}
+
+#custom-notification {
+	color: @fg;
+	margin: 0 12px 0 12px;
+}
+
+#pulseaudio {
+	color: @yellow;
+}
+
+#network {
+	color: @purple;
+}
+
+#battery {
+	color: @green;
+}

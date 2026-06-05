@@ -1,0 +1,19 @@
+[
+    {
+        "name": "dock",
+        "position": "bottom",
+        "height": 54,
+        "spacing": 6,
+        "layer": "top",
+        "margin-top": 0,
+        "margin-bottom": 8,
+        "margin-left": 0,
+        "margin-right": 0,
+        "exclusive": false,
+        "passthrough": false,
+        "gtk-layer-shell": true,
+        "modules-left": [],
+        "modules-center": [],
+        "modules-right": []
+    }
+]

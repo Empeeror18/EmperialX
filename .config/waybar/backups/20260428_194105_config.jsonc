@@ -1,0 +1,215 @@
+[
+    {
+        "position": "top",
+        "height": 35,
+        "spacing": 10,
+        "margin-top": 5,
+        "margin-bottom": 8,
+        "margin-left": 12,
+        "margin-right": 12,
+        "modules-left": [
+            "custom/arch",
+            "clock",
+            "tray"
+        ],
+        "modules-center": [
+            "hyprland/workspaces"
+        ],
+        "modules-right": [
+            "pulseaudio",
+            "network",
+            "battery",
+            "custom/swaync",
+            "custom/power"
+        ],
+        "hyprland/workspaces": {
+            "format": "{id}",
+            "on-scroll-up": "hyprctl dispatch workspace e-1",
+            "on-scroll-down": "hyprctl dispatch workspace e+1",
+            "persistent-workspaces": {
+                "*": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ]
+            },
+            "anim-color-1": "#89b4fa",
+            "anim-color-2": "#cba6f7",
+            "anim-duration": 3,
+            "button-radius": 5,
+            "button-pad-v": 0,
+            "button-pad-h": 4,
+            "button-minw": 35
+        },
+        "hyprland/window": {
+            "format": "{}",
+            "max-length": 60,
+            "separate-outputs": true
+        },
+        "clock": {
+            "format": "{:%H:%M  |  %A %d %B}",
+            "timezone": "America/Monterrey",
+            "locale": "es_MX.utf8",
+            "interval": 1,
+            "on-click": "flatpak run com.ml4w.calendar",
+            "tooltip": true
+        },
+        "cpu": {
+            "format": "󰍛 {usage}%",
+            "tooltip": true,
+            "interval": 2
+        },
+        "memory": {
+            "format": "󰾆 {used:0.1f}G",
+            "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G",
+            "interval": 5
+        },
+        "network": {
+            "format-wifi": "󰖩 {essid}",
+            "format-ethernet": "󰈀 {essid}",
+            "format-disconnected": "󰖪 Sin red",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n{essid} ({signalStrength}%)\n↑ {bandwidthUpBits}  ↓ {bandwidthDownBits}",
+            "on-click": "nm-connection-editor",
+            "interval": 5,
+            "_inverted": false
+        },
+        "pulseaudio": {
+            "format": "{icon} {volume}%",
+            "format-muted": "󰝟 mute",
+            "format-icons": {
+                "default": [
+                    "󰕿",
+                    "󰖀",
+                    "󰕾"
+                ]
+            },
+            "on-click": "pavucontrol",
+            "scroll-step": 5
+        },
+        "battery": {
+            "format": "{icon} {capacity}%",
+            "format-icons": [
+                "󰁺",
+                "󰁼",
+                "󰁾",
+                "󰂀",
+                "󰂂",
+                "󰁹"
+            ],
+            "format-charging": "󰂄 {capacity}%",
+            "format-plugged": "󰚥 {capacity}%",
+            "states": {
+                "warning": 30,
+                "critical": 15
+            }
+        },
+        "tray": {
+            "spacing": 8,
+            "icon-size": 18,
+            "_inverted": false
+        },
+        "custom/arch": {
+            "format": "<span font='JetBrainsMono Nerd Font Mono 20' color='#ffffff'>󰣇</span>",
+            "on-click": "$HOME/.local/bin/vsfetch",
+            "tooltip": false,
+            "arch-icon-glyph": "󰣇",
+            "arch-pad-left": 15,
+            "arch-pad-right": 10
+        },
+        "custom/weather": {
+            "format": "{}",
+            "exec": "$HOME/.config/waybar/scripts/weather.py",
+            "return-type": "json",
+            "interval": 3600,
+            "tooltip": true,
+            "on-click": "flatpak run io.github.amit9838.mousam"
+        },
+        "custom/updates": {
+            "exec": "count=$(checkupdates 2>/dev/null | wc -l); [ \"$count\" -gt 0 ] && echo '{\"text\":\"󰚰 '\"$count\"'\",\"class\":\"pending\"}' || echo '{\"text\":\"󰚰 0\",\"class\":\"updated\"}'",
+            "return-type": "json",
+            "interval": 60,
+            "tooltip": false,
+            "on-click": "kitty --class floating-terminal -e ~/.config/hypr/scripts/install-updates.sh"
+        },
+        "custom/swaync": {
+            "format": "<span font='JetBrainsMono Nerd Font Mono 16'>{icon}</span>",
+            "format-icons": {
+                "none": "󰂚",
+                "notification": "󰂜",
+                "dnd-none": "󰂛",
+                "dnd-notification": "󰂛"
+            },
+            "return-type": "json",
+            "exec-if": "which swaync-client",
+            "exec": "swaync-client -swb",
+            "on-click": "swaync-client -t -sw",
+            "on-click-right": "swaync-client -d -sw",
+            "escape": true,
+            "tooltip": false
+        },
+        "custom/power": {
+            "format": "⏻",
+            "on-click": "wlogout -b 3 -c 20 -r 20 -L 400 -R 400 -T 200 -B 200 --protocol layer-shell",
+            "tooltip": false
+        },
+        "custom/settings": {
+            "format": "󰒓",
+            "on-click": "vswaybar-studio",
+            "tooltip": false
+        },
+        "custom/claudebar": {
+            "exec": "claudebar --format '{session_bar} {session_pct}% · {session_reset}'",
+            "return-type": "json",
+            "interval": 30,
+            "signal": 13,
+            "tooltip": true,
+            "on-click": "xdg-open https://claude.ai/settings/usage"
+        },
+        "custom/bar-cpu": {
+            "exec": "$HOME/.config/waybar/scripts/vsbar.py --type cpu",
+            "return-type": "json",
+            "interval": 2,
+            "tooltip": true
+        },
+        "custom/bar-mem": {
+            "exec": "$HOME/.config/waybar/scripts/vsbar.py --type mem",
+            "return-type": "json",
+            "interval": 5,
+            "tooltip": true
+        },
+        "custom/bar-vol": {
+            "exec": "$HOME/.config/waybar/scripts/vsbar.py --type vol",
+            "return-type": "json",
+            "interval": 2,
+            "tooltip": true,
+            "on-click": "pavucontrol"
+        },
+        "custom/bar-wifi": {
+            "exec": "$HOME/.config/waybar/scripts/vsbar.py --type wifi",
+            "return-type": "json",
+            "interval": 5,
+            "tooltip": true,
+            "on-click": "nm-connection-editor"
+        },
+        "name": "bar"
+    },
+    {
+        "name": "dock",
+        "position": "bottom",
+        "height": 54,
+        "spacing": 6,
+        "layer": "top",
+        "margin-top": 0,
+        "margin-bottom": 8,
+        "margin-left": 0,
+        "margin-right": 0,
+        "exclusive": true,
+        "passthrough": false,
+        "gtk-layer-shell": true,
+        "modules-left": [],
+        "modules-center": [],
+        "modules-right": []
+    }
+]

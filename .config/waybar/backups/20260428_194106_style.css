@@ -1,0 +1,225 @@
+@define-color base     #1a1b26;
+@define-color mantle   #16161e;
+@define-color crust    #13131a;
+@define-color surface0 #24283b;
+@define-color surface1 #292e42;
+@define-color overlay0 #565f89;
+@define-color text     #c0caf5;
+@define-color subtext0 #a9b1d6;
+@define-color blue     #7aa2f7;
+@define-color mauve    #bb9af7;
+@define-color red      #f7768e;
+@define-color green    #9ece6a;
+@define-color yellow   #e0af68;
+@define-color peach    #ff9e64;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: transparent;
+    border-radius: 0px;
+    border: none;
+    color: @text;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: alpha(@base, 0.88);
+    border-radius: 17px;
+    padding: 2px 5px;
+    border: none;
+    min-height: 0;
+}
+
+.modules-right {
+    padding-right: 15px;
+}
+
+/* Arch icon */
+#custom-arch {
+    color: @blue;
+    padding: 0 10px 0 15px;
+}
+
+/* Workspaces */
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    border-radius: 5px;
+    padding: 0px 4px;
+    min-width: 35px;
+    background: transparent;
+    color: @subtext0;
+    border: none;
+}
+
+#workspaces button:hover {
+    background: @surface0;
+    color: @text;
+}
+
+#workspaces button.active {
+    background: @blue;
+    color: @base;
+    animation: ws-active 3s ease infinite;
+}
+
+#workspaces button.urgent {
+    background: @red;
+    color: @base;
+}
+
+@keyframes ws-active {
+    0%  { background-color: #89b4fa; }
+    50% { background-color: #cba6f7; }
+    100%{ background-color: #abd290; }
+}
+
+/* Window title */
+#window {
+    color: @subtext0;
+    font-style: italic;
+}
+
+/* Clock */
+#clock {
+    color: @blue;
+    font-weight: bold;
+}
+
+/* System modules */
+#cpu {
+    color: @peach;
+}
+
+#memory {
+    color: @mauve;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#network {
+    color: @green;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#pulseaudio {
+    color: @blue;
+}
+
+#pulseaudio.muted {
+    color: @overlay0;
+}
+
+/* Tray */
+#tray {
+    color: @subtext0;
+}
+
+/* Custom modules */
+#custom-weather {
+    color: @peach;
+}
+
+#custom-updates {
+    color: @green;
+}
+
+#custom-updates.pending {
+    color: @yellow;
+}
+
+#custom-swaync {
+    color: @text;
+}
+
+#custom-power {
+    color: @red;
+}
+
+#custom-settings {
+    color: @subtext0;
+}
+
+/* Tooltip */
+tooltip {
+    background: @surface0;
+    border: 1px solid @overlay0;
+    border-radius: 8px;
+    color: @text;
+}
+
+tooltip label {
+    color: @text;
+}
+/* vswaybar:modpad */
+window#waybar #clock, window#waybar #cpu, window#waybar #memory, window#waybar #network,
+window#waybar #pulseaudio, window#waybar #battery, window#waybar #tray,
+window#waybar #custom-updates, window#waybar #custom-weather, window#waybar #custom-swaync,
+window#waybar #custom-power, window#waybar #custom-settings, window#waybar #custom-claudebar,
+window#waybar #custom-bar-cpu, window#waybar #custom-bar-mem,
+window#waybar #custom-bar-vol, window#waybar #custom-bar-wifi {
+    padding: 0 5px;
+}
+window#waybar #custom-arch {
+    padding: 0 10px 0 15px;
+}
+window#waybar #custom-bar-cpu  { color: @peach; }
+window#waybar #custom-bar-mem  { color: @mauve; }
+window#waybar #custom-bar-vol  { color: @blue; }
+window#waybar #custom-bar-wifi { color: @green; }
+
+/* vswaybar:sep */
+window#waybar .modules-left > *, window#waybar .modules-center > *, window#waybar .modules-right > * {
+    border-right: 0px solid #24283b;
+}
+window#waybar .modules-left > *:last-child,
+window#waybar .modules-center > *:last-child,
+window#waybar .modules-right > *:last-child {
+    border-right: none;
+}
+
+
+/* vswaybar:dock:begin */
+window#waybar.dock * {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 22px;
+}
+
+window#waybar.dock {
+    background: transparent;
+    border: none;
+}
+
+window#waybar.dock .modules-left,
+window#waybar.dock .modules-center,
+window#waybar.dock .modules-right {
+    background: transparent;
+    border: none;
+    padding: 0;
+    min-height: 0;
+    min-width: 0;
+}

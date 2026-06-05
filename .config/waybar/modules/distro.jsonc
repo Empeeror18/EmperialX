@@ -1,0 +1,21 @@
+{
+  "custom/distro": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/terminal": {
+    "format": "󰆍",
+    "on-click": "kitty",
+    "tooltip": false
+  },
+  "custom/code": {
+    "format": "󰨞",
+    "on-click": "code",
+    "tooltip": false
+  },
+  "custom/spotify": {
+    "format": "",
+    "on-click": "spotify",
+    "tooltip": false
+  }
+}

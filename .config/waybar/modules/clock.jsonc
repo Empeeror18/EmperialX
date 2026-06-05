@@ -1,0 +1,8 @@
+{
+  "clock": {
+    "timezone": "Asia/",
+    "format": "󰥔   {:%I:%M %p}",
+    "format-alt": "󰥔    {:%a, %d. %b  %I:%M %p}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  }
+}

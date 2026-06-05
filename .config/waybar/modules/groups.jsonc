@@ -1,0 +1,49 @@
+{
+  "group/distro-group": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 650,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/distro",
+      "custom/terminal",
+      "custom/code",
+      "custom/obsidian",
+      "custom/files",
+      "custom/spotify",
+      "custom/browser"
+    ]
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 650,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  "group/network": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "network"
+    ]
+  },
+  "group/swaync": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+      "modules": [
+      "swaync"
+    ]
+  }
+}
