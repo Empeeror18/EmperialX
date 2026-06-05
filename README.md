@@ -99,7 +99,7 @@ Every application respects your color scheme:
       <br><sub>Wallpaper launcher with dynamic theming</sub>
     </td>
     <td width="50%" align="center">
-      <img src="assets/Logout.png" alt="Logout menu" />
+      <img src="assets/logout.png" alt="Logout menu" />
       <br><sub>Session management menu</sub>
     </td>
   </tr>
