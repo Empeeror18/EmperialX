@@ -2,7 +2,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 20,
+  "height": 10,
   "margin-top": 7,
   "spacing": 5,  
   "on-click": "~/.config/hypr/scripts/volume-popup.sh",
@@ -14,7 +14,10 @@
     "./modules/audio.jsonc",
     "./modules/workspace.jsonc",
     "./modules/idle_inhibitor.jsonc",
-    "./modules/groups.jsonc"
+    "./modules/groups.jsonc",
+    "./modules/swaync.jsonc",
+    "./modules/battery.jsonc"
+
   ],
 
   "modules-left": [
@@ -30,7 +33,9 @@
   "modules-right": [
     "group/audio", 
     "power-profile", 
-    "group/network"
+    "group/network",
+    "battery",
+    "custom/swaync"
   ]
   }
 

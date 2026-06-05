@@ -1,0 +1,10 @@
+
+{
+  "custom/swaync": {
+  "format": "󰏖",
+  "tooltip": "Notification Center",
+  "on-click": "swaync-client -t",
+  "on-click-right": "swaync-client -d",
+  "return-type": "json"
+}
+}

@@ -1,0 +1,132 @@
+/* =============================================================================
+ * wallpaper.rasi — Universal Neutral Glass Theme
+ * ============================================================================= */
+
+@import "colors.rasi"
+
+* {
+    font: "Inter Medium 11";
+
+    background-color: transparent;
+
+    text-color: @fg-main;
+}
+
+/* ── Window ────────────────────────────────── */
+
+window {
+    width: 820px;
+    height: 700px;
+
+    location: center;
+    anchor: center;
+
+    border: 0;
+    border-radius: 24px;
+
+    padding: 18px;
+
+    background-color: @bg-main;
+}
+
+/* ── Main Layout ───────────────────────────── */
+
+mainbox {
+    spacing: 16px;
+
+    children: [ inputbar, listview ];
+}
+
+/* ── Search Bar ────────────────────────────── */
+
+inputbar {
+    padding: 12px 18px;
+
+    spacing: 12px;
+
+    border-radius: 100px;
+
+    background-color: @bg-panel;
+
+    children: [ prompt, entry ];
+}
+
+prompt {
+    enabled: true;
+
+    content: "";
+
+    font: "JetBrainsMono Nerd Font 12";
+
+    text-color: @fg-dim;
+
+    margin: 0px 4px 0px 0px;
+}
+
+entry {
+    placeholder: "Search wallpaper...";
+
+    placeholder-color: @fg-dim;
+
+    text-color: @fg-main;
+
+    background-color: transparent;
+}
+
+/* ── Wallpaper Grid ────────────────────────── */
+
+listview {
+    columns: 3;
+    lines: 2;
+
+    flow: horizontal;
+
+    fixed-height: true;
+    fixed-columns: true;
+
+    cycle: false;
+
+    scrollbar: false;
+
+    spacing: 16px;
+}
+
+/* ── Wallpaper Cards ───────────────────────── */
+
+element {
+    orientation: vertical;
+
+    padding: 10px;
+
+    spacing: 10px;
+
+    border-radius: 18px;
+}
+
+/* ── Selected Wallpaper ────────────────────── */
+
+element selected.normal {
+    background-color: @bg-selected;
+
+    border-radius: 18px;
+}
+
+/* ── Preview Image ─────────────────────────── */
+
+element-icon {
+    size: 210px;
+
+    border-radius: 14px;
+
+    horizontal-align: 0.5;
+
+    vertical-align: 0.5;
+}
+
+/* ── Wallpaper Name ────────────────────────── */
+
+element-text {
+    horizontal-align: 0.5;
+
+    text-color: @fg-main;
+}

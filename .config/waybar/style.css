@@ -1,7 +1,7 @@
-@import "colors/main-colors.css";
-@import url("/home/emperor/.cache/wal/colors-waybar.css");
+@import "/home/emperor/.cache/wal/colors-waybar.css";
+
 * {
-    font-family: 'Radio Canada Big', sans-serif;
+    font-family: 'Radio Canada Big',"JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
     font-weight: bold;
     font-size: 16px;
     border-radius: 19px;
@@ -44,21 +44,16 @@ window#waybar {
     margin-right: 12px;   
 }
 
-#battery,
-
-#backlight,
-#distro-group {
-  margin: 4px 5px;
-  background-color: rgba(20, 20, 20, 0.8);
+#battery {
+  background-color: @background;
   border-radius: 20px;
-  color: rgb(4, 4, 9);
+  color: @color2;
+  margin: 0 0px 0 0px;
+  padding: 6px 15px 6px 15px;
 }
 
-#custom-distro {
-  color: @primary;
-  padding: 6px 15px 6px 10px;
-}
-
+#pulseaudio,
+#backlight,
 #network {
     color: @color2; /* color2 */
     background-color: @background; /* background */
@@ -78,23 +73,15 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: @color4;
-    background-color: @background;
-    border-radius: 50%;
-    padding: 0 15px;
-    
-}
-
-#backlight {
     color: @color5; /* color5 */
+      padding: 6px 13px 6px 12px;
 }
 
-#idle_inhibitor {
-  margin: 4px 5px;
-  padding: 6px 15px 6px 10px;
-  background-color:  rgba(20, 20, 20, 0.8);
-  border-radius: 20px;
-  color: @secondary_fixed_dim;
+#custom-media {
+    color: @color4; /* color2 */
+    background-color: rgba(20, 20, 20, 0.8);
+    margin: 0 0px 0 15px;
+    padding: 6px 15px 6px 15px; /* top, right, bottom, left */
 }
 
 #pulseaudio-slider {
@@ -126,17 +113,16 @@ window#waybar {
 }
 
 #distro-group {
-  margin: 4px 5px;
-  background-color: @surface_container;
+
+  background-color: @background;
   border-radius: 20px;
-  color: @primary;
-    background-color:  rgba(20, 20, 20, 0.8);
+  color: @color3;
 }
 
 #custom-distro {
   color: @primary;
   padding: 6px 15px 6px 10px;
-  background-color:  rgba(20, 20, 20, 0.8);}
+}
 
 #custom-terminal {
   color: #a6e3a1;
@@ -148,17 +134,23 @@ window#waybar {
   padding: 0px 10px;
 }
 
+
 #custom-spotify {
   color: #1db954;
   padding: 0px 10px;
 }
 
-
 #power-profiles-daemon,
-#idle_inhibitor {
-  margin: 4px 5px;
+#idle_inhibitor{
   padding: 6px 15px 6px 10px;
-    background-color:  rgba(20, 20, 20, 0.8);
+  background-color: rgba(20, 20, 20, 0.8);
   border-radius: 20px;
-  color: @secondary_fixed_dim;
+  color: @color4;
+}
+
+#custom-swaync {
+  padding: 6px 15px 6px 10px;
+  background-color: @background;
+  border-radius: 20px;
+  color: @color4;
 }

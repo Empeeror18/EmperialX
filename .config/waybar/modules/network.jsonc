@@ -1,8 +1,8 @@
 { 
   "network": {
     "format": "{ifname}",
-    "format-wifi": "{icon} {essid}",
-    "format-ethernet": "󰈀  Connected",
+    "format-wifi": "{icon}    {essid}",
+    "format-ethernet": "󰈀    Connected",
     "format-disconnected": "󰤭   disconnected",
     "format-disabled": "󰤮",
     "max-length": 30,

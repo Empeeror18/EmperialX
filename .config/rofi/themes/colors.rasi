@@ -1,0 +1,10 @@
+/* Glassy dark theme */
+
+* {
+    fg-main:       #ECEFF4;
+    fg-dim:        #A0A8B7;
+
+    bg-main:       rgba(24, 26, 32, 0.75);
+    bg-panel:      rgba(40, 42, 54, 0.55);
+    bg-selected:   rgba(120, 180, 255, 0.25);
+}
