@@ -1,3 +1,7 @@
+> [!WARNING]
+> Further Development is stopped at the moment.
+> Not Compatible with Hyprland 0.55.x and above.
+
 <div align="center">
   <img src="assets/logo.png" width="160" alt="EmperialX Logo" />
 </div>
